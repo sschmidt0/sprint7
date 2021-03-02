@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import textos from '../assets/textos';
 
 const DivTextos = styled.div`
   padding: 30px 50px;
@@ -14,9 +15,19 @@ const Paragraph = styled.p`
 `;
 
 const Línia = (props) => {
+  let key = -1;
+
+  const line = textos.map(text => {
+    key++;
+    console.log(key);
+    console.log(props.marked);
+    return key === props.marked ? <Paragraph style={{ backgroundColor: 'lightblue', color: '#333', padding: '5px', marginLeft: '-5px' }} key={ key }>{ text }</Paragraph> : <Paragraph key={ key }>{ text }</Paragraph>;
+
+  });
+
   return (
     <DivTextos>
-      <Paragraph>{ props.text }</Paragraph>
+      { line }
     </DivTextos>
   );
 }

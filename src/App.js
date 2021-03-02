@@ -30,7 +30,7 @@ function App() {
         <Button onClick={ () => lastItem() }>Anterior</Button>
         <Button onClick={ () => nextItem() }>Següent</Button>
       </div>
-      <Línia text={textos[text]}/>
+      <Línia marked={text} />
     </DivContainer>
   );
 }

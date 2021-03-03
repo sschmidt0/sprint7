@@ -1,8 +1,10 @@
 import textos from '../assets/textos';
 
 const Línia = () => {
+  let key = 0;
   const line = textos.map(text => {
-    return <p>{ text }</p>;
+    key++;
+    return <p key={ key }>{ text }</p>;
   });
 
   return (
@@ -11,3 +13,4 @@ const Línia = () => {
 }
 
 export default Línia;
+

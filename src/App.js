@@ -1,9 +1,9 @@
-import Línia from './components/Línia';
+import { Linia } from './components/Linia';
 
 function App() {
   return (
     <div className="App">
-      <Línia />
+      <Linia />
     </div>
   );
 }

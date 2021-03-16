@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Línia from './components/Línia';
+import { Linia } from './components/Linia';
 import styled from 'styled-components';
 import textos from './assets/textos';
 
@@ -17,8 +17,7 @@ const Button = styled.button`
 `;
 
 
-
-function App() {
+export default () => {
   const [text, setText] = useState(0);
 
   const lastItem = () => setText(prevText => prevText < 1 ? (prevText = textos.length-1) : prevText - 1);
@@ -30,9 +29,7 @@ function App() {
         <Button onClick={ () => lastItem() }>Anterior</Button>
         <Button onClick={ () => nextItem() }>Següent</Button>
       </div>
-      <Línia marked={text} />
+      <Linia marked={text} />
     </DivContainer>
   );
-}
-
-export default App;
+};
